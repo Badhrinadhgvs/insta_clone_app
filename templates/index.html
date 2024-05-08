@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% for i in p %}
+<div class="card mb-3 main-card" style="margin: 20px;">
+  <img class="card-img-top" src="{{i.image.url}}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{i.Title}}</h5>
+    <p class="card-text">{{i.uploaded_at}}</p>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

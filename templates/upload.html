@@ -1,0 +1,17 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Photo Upload</title>
+</head>
+<body>
+    <h2>Upload a photo</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+
+    <h2>Uploaded Photos</h2>
+    {% for photo in photos %}
+        <img src="{{ photo.image.url }}" alt="Photo" width="300px">
+    {% endfor %}
+</body>
